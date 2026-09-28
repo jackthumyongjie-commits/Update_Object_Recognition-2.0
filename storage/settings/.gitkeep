@@ -1,0 +1,2 @@
+# Keep this folder for runtime settings (JSON written by Settings page)
+# cPanel: set this directory to writable (chmod 755 or 775)

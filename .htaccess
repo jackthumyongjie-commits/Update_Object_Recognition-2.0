@@ -1,0 +1,28 @@
+# Disable directory listing
+Options -Indexes
+
+# Prefer index.php
+DirectoryIndex index.php
+
+# Increase upload/post limits for Base64 image JSON (adjust if host allows)
+<IfModule mod_php.c>
+  php_value post_max_size 12M
+  php_value upload_max_filesize 8M
+  php_value max_execution_time 120
+</IfModule>
+
+# Force HTTPS on cPanel / production (recommended for camera access)
+# Uncomment these lines after SSL is active on your domain:
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteCond %{HTTPS} !=on
+#   RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+#   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>
+
+# Block access to hidden / sensitive patterns
+<FilesMatch "^\.">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+</FilesMatch>

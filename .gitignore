@@ -1,0 +1,15 @@
+# Secrets and local config
+config/config.php
+storage/settings/runtime.json
+storage/logs/*.log
+!storage/logs/.gitkeep
+!storage/settings/.gitkeep
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+ai-ar-cpanel-upload.zip
